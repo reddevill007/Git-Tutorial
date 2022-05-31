@@ -1,5 +1,196 @@
-Git tutorial
 
-Making changes
+[ /f/GIT/Test Project Git ]
 
-More changes
+[ /f/GIT/Test Project Git ] (master)
+> git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        somefile.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+[ /f/GIT/Test Project Git ] (master)
+> git add somefile.txt 
+
+[ /f/GIT/Test Project Git ] (master)
+> git add .
+
+[ /f/GIT/Test Project Git ] (master)
+> git commit -m "Added somefiles.txt"
+[master (root-commit) 1f122d5] Added somefiles.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 somefile.txt
+
+[ /f/GIT/Test Project Git ] (master)
+> git status
+On branch master
+nothing to commit, working tree clean
+
+[ /f/GIT/Test Project Git ] (master)
+> git log
+commit 1f122d5e786c59c8d9622c51e3ed9d281bbab831 (HEAD -> master)
+Author: reddevill007 <shivampandey2900@gmail.com>
+Date:   Mon May 30 12:49:20 2022 +0530
+
+    Added somefiles.txt
+
+[ /f/GIT/Test Project Git ] (master)
+> git add .
+
+[ /f/GIT/Test Project Git ] (master)
+> git commit -m "edited somfile.txt"
+[master fdacaad] edited somfile.txt
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+[ /f/GIT/Test Project Git ] (master)
+> git log
+commit fdacaade60cdf6a8a7bff4ddf85f1876e701cb8c (HEAD -> master)
+Author: reddevill007 <shivampandey2900@gmail.com>
+Date:   Mon May 30 12:54:50 2022 +0530
+
+    edited somfile.txt
+
+commit 1f122d5e786c59c8d9622c51e3ed9d281bbab831
+Author: reddevill007 <shivampandey2900@gmail.com>
+Date:   Mon May 30 12:49:20 2022 +0530
+
+    Added somefiles.txt
+
+[ /f/GIT/Test Project Git ] (master)
+> git add .
+
+[ /f/GIT/Test Project Git ] (master)
+> git commit -m "added test,js"
+[master ba372e5] added test,js
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test.js
+
+[ /f/GIT/Test Project Git ] (master)
+> git remote add origin https://github.com/reddevill007/Git-Tutorial.git
+
+[ /f/GIT/Test Project Git ] (master)
+> git remote -v
+origin  https://github.com/reddevill007/Git-Tutorial.git (fetch)
+origin  https://github.com/reddevill007/Git-Tutorial.git (push)
+
+[ /f/GIT/Test Project Git ] (master)
+> git push origin master
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (9/9), 771 bytes | 128.00 KiB/s, done.
+Total 9 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/reddevill007/Git-Tutorial.git
+ * [new branch]      master -> master
+
+[ /f/GIT/Test Project Git ] (master)
+> git add .
+
+[ /f/GIT/Test Project Git ] (master)
+> git commit -m "added hello 2"
+[master 9064f70] added hello 2
+ 1 file changed, 2 insertions(+)
+
+[ /f/GIT/Test Project Git ] (master)
+> git remote -v
+origin  https://github.com/reddevill007/Git-Tutorial.git (fetch)
+origin  https://github.com/reddevill007/Git-Tutorial.git (push)
+
+[ /f/GIT/Test Project Git ] (master)
+> git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 314 bytes | 104.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/reddevill007/Git-Tutorial.git
+   ba372e5..9064f70  master -> master
+
+[ /f/GIT/Test Project Git ] (master)
+> git branch
+* master
+
+[ /f/GIT/Test Project Git ] (master)
+> git checkout -b my-feature
+Switched to a new branch 'my-feature'
+
+[ /f/GIT/Test Project Git ] (my-feature)
+> git branch
+  master
+* my-feature
+
+[ /f/GIT/Test Project Git ] (my-feature)
+> git add .
+
+[ /f/GIT/Test Project Git ] (my-feature)
+> git commit -m "created branch"
+[my-feature 8e95609] created branch
+ 1 file changed, 2 insertions(+)
+
+[ /f/GIT/Test Project Git ] (my-feature)
+> git branch
+  master
+* my-feature
+
+[ /f/GIT/Test Project Git ] (my-feature)
+> git checkout master
+Switched to branch 'master'
+
+[ /f/GIT/Test Project Git ] (master)
+> git checkout my-feature
+Switched to branch 'my-feature'
+
+[ /f/GIT/Test Project Git ] (my-feature)
+> git push origin my-feature
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 316 bytes | 316.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'my-feature' on GitHub by visiting:
+remote:      https://github.com/reddevill007/Git-Tutorial/pull/new/my-feature
+remote:
+To https://github.com/reddevill007/Git-Tutorial.git
+ * [new branch]      my-feature -> my-feature
+
+[ /f/GIT/Test Project Git ] (my-feature)
+> git pull origin mastet
+fatal: couldn't find remote ref mastet
+
+[ /f/GIT/Test Project Git ] (my-feature)
+> git pull origin master
+From https://github.com/reddevill007/Git-Tutorial
+ * branch            master     -> FETCH_HEAD
+Updating 8e95609..15d9f6d
+Fast-forward
+
+[ /f/GIT/Test Project Git ] (my-feature)
+> git log
+commit 15d9f6d70fa565b555caa66b9289c97572c8f1bf (HEAD -> my-feature, origin/master)
+Merge: 9064f70 8e95609
+Author: Saurabh Pandey <74395114+reddevill007@users.noreply.github.com>
+Date:   Tue May 31 21:45:30 2022 +0530
+
+    Merge pull request #1 from reddevill007/my-feature
+
+    developed my new feature
+
+commit 8e95609886846faba293e3ae0f5ead4212b7537c (origin/my-feature)
+Author: reddevill007 <shivampandey2900@gmail.com>
+Date:   Tue May 31 21:30:41 2022 +0530
+
+    created branch
+
+commit 9064f7041b851697dd721f4635e0e0eac29171d0 (master)
+Author: reddevill007 <shivampandey2900@gmail.com>
+Date:   Tue May 31 17:59:00 2022 +0530
+
+:
